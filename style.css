@@ -214,3 +214,146 @@ input:focus {
     width: 100%;
   }
 }
+
+.encabezado-sitio .contenedor {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.logo-sitio {
+  text-decoration: none;
+}
+
+.acciones-header {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-cuenta {
+  font-size: 0.75rem;
+}
+
+.nav-cuenta a {
+  color: #b5b5b5;
+  text-decoration: none;
+}
+
+.nav-cuenta a:hover, .nav-cuenta a:focus-visible {
+  color: #ffad1f;
+}
+
+.enlace-carrito {
+  color: #f5f5f5;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.enlace-carrito:hover, .enlace-carrito:focus-visible {
+  color: #ffad1f;
+}
+
+.seccion-hero {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding-top: 12px;
+}
+
+.hero-texto {
+  flex: 1 1 320px;
+}
+
+.hero-texto h2 {
+  border-left: 4px solid #f28c00;
+  padding-left: 12px;
+}
+
+.hero-imagen {
+  flex: 1 1 320px;
+}
+
+.hero-imagen img {
+  border: 1px solid #f28c00;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.boton {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.boton-primario {
+  background-color: #f28c00;
+  color: #111111;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  text-transform: uppercase;
+}
+
+.boton-primario:hover, .boton-primario:focus-visible {
+  background-color: #ffad1f;
+}
+
+.pie-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-between;
+  padding: 32px 24px 0;
+  text-align: left;
+}
+
+.pie-columna h3 {
+  color: #ffd23f;
+  font-size: 1rem;
+}
+
+.pie-categorias {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pie-categorias li {
+  margin-bottom: 6px;
+}
+
+.pie-categorias a {
+  color: #b5b5b5;
+  text-decoration: none;
+}
+
+.pie-categorias a:hover, .pie-categorias a:focus-visible {
+  color: #ffad1f;
+}
+
+.grupo-newsletter {
+  display: flex;
+  gap: 8px;
+}
+
+.grupo-newsletter input {
+  flex: 1;
+}
+
+.pie-copyright {
+  margin-top: 24px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .acciones-header {
+    align-items: flex-start;
+  }
+}

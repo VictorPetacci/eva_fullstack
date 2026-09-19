@@ -3,71 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tienda en Linea - DSY1104</title>
+    <title>Inicio - Tienda en Linea</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="encabezado-sitio">
       <div class="contenedor">
-        <h1>Mi Tienda en Linea</h1>
+        <a href="index.html" class="logo-sitio">
+          <h1>Mi Tienda en Línea</h1>
+        </a>
+
         <nav aria-label="Navegación principal">
           <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="index.html" aria-current="page">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
           </ul>
         </nav>
+
+        <div class="acciones-header">
+          <nav class="nav-cuenta" aria-label="Cuenta de usuario">
+            <a href="login.html">Iniciar sesión</a>
+            <span aria-hidden="true">|</span>
+            <a href="registro.html">Registrar usuario</a>
+          </nav>
+          <a href="carrito.html" class="enlace-carrito" aria-label="Ver carrito de compras">
+            🛒 Carrito (<span id="contador-carrito">0</span>)
+          </a>
+        </div>
       </div>
     </header>
 
-    <main class="contenedor">
-      <section id="destacado" class="seccion-destacada">
-        <h2>Video de Lanzamiento</h2>
-        <div class="contenedor-video">
-          <iframe
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="Video promocional"
-            frameborder="0"
-            allowfullscreen
+    <main>
+      <section id="inicio-hero" class="seccion-hero contenedor">
+        <div class="hero-texto">
+          <h2>Tienda Online</h2>
+          <p>
+            Equípate con lo mejor en periféricos gamer: teclados, mouses y
+            audífonos pensados para rendir al máximo en cada partida.
+          </p>
+          <a href="productos.html" class="boton boton-primario">Ver productos</a>
+        </div>
+        <div class="hero-imagen">
+          <img
+            src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=900&q=80"
+            alt="Setup gamer con teclado, mouse y audífonos"
             loading="lazy"
-          ></iframe>
+          />
         </div>
       </section>
 
-      <section id="productos">
+      <section id="productos" class="contenedor">
         <h2>Productos Destacados</h2>
         <div id="contenedor-productos" class="seccion-productos"></div>
-      </section>
-
-      <section id="contacto" class="seccion-contacto">
-        <h2>Formulario de Registro</h2>
-
-        <form id="formularioRegistro" novalidate>
-          <div class="grupo-formulario">
-            <label for="nombre">Nombre Completo:</label>
-            <input type="text" id="nombre" name="nombre" required />
-            <span class="mensaje-error" id="errorNombre"></span>
-          </div>
-
-          <div class="grupo-formulario">
-            <label for="email">Correo Electrónico:</label>
-            <input
-              type="email"
-              id="correo"
-              name="correo"
-              placeholder="ejemplo@correo.cl"
-              required
-            />
-            <span class="mensaje-error" id="errorCorreo"></span>
-          </div>
-
-          <button type="submit">Enviar</button>
-        </form>
       </section>
     </main>
 
     <footer class="pie-sitio">
-      <p>&copy; 2026 Tienda Online Duoc UC. Todos los derechos reservados.</p>
+      <div class="contenedor pie-contenido">
+        <div class="pie-columna">
+          <h3>Mi Tienda en Línea</h3>
+          <ul class="pie-categorias">
+            <li><a href="productos.html">Teclados</a></li>
+            <li><a href="productos.html">Mouses</a></li>
+            <li><a href="productos.html">Audífonos</a></li>
+          </ul>
+        </div>
+
+        <div class="pie-columna">
+          <h3>Mantente al día</h3>
+          <form class="formulario-newsletter" aria-label="Suscripción al boletín">
+            <label for="correoBoletin">Recibe nuestras novedades</label>
+            <div class="grupo-newsletter">
+              <input type="email" id="correoBoletin" name="correoBoletin" placeholder="tu@correo.cl" />
+              <button type="submit">Suscribir</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <p class="pie-copyright">&copy; 2026 Tienda Online Duoc UC. Todos los derechos reservados.</p>
     </footer>
 
     <script src="jscript.js"></script>
