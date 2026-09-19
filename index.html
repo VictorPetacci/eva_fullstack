@@ -1,11 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda en Linea - DSY1104</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="encabezado-sitio">
+      <div class="contenedor">
+        <h1>Mi Tienda en Linea</h1>
+        <nav aria-label="Navegación principal">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="contenedor">
+      <section id="destacado" class="seccion-destacada">
+        <h2>Video de Lanzamiento</h2>
+        <div class="contenedor-video">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Video promocional"
+            frameborder="0"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
+
+      <section id="productos" class="seccion-productos">
+        <h2>Productos Destacados</h2>
+
+        <article class="tarjeta-producto">
+          <img
+            src="https://images.unsplash.com/photo-1541140532154-b024d705b90a?auto=format&fit=crop&w=600&q=80"
+            alt="Teclado mecánico gamer con iluminación"
+            loading="lazy"
+          />
+          <h3>Teclado Mecánico RGB</h3>
+          <p>Respuesta rápida y switches diseñados para largas partidas.</p>
+          <button type="button">Comprar</button>
+        </article>
+
+        <article class="tarjeta-producto">
+          <img
+            src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=600&q=80"
+            alt="Mouse gamer ergonómico"
+            loading="lazy"
+          />
+          <h3>Mouse Gamer Pro</h3>
+          <p>Precisión y control para competir al máximo nivel.</p>
+          <button type="button">Comprar</button>
+        </article>
+
+        <article class="tarjeta-producto">
+          <img
+            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80"
+            alt="Audífonos inalámbricos para videojuegos"
+            loading="lazy"
+          />
+          <h3>Audífonos Inalámbricos</h3>
+          <p>Sonido envolvente para escuchar cada movimiento.</p>
+          <button type="button">Comprar</button>
+        </article>
+      </section>
+
+      <section id="contacto" class="seccion-contacto">
+        <h2>Formulario de Registro</h2>
+
+        <form id="formularioRegistro" novalidate>
+          <div class="grupo-formulario">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" required />
+            <span class="mensaje-error" id="errorNombre"></span>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="email">Correo Electrónico:</label>
+            <input
+              type="email"
+              id="correo"
+              name="correo"
+              placeholder="ejemplo@correo.cl"
+              required
+            />
+            <span class="mensaje-error" id="errorCorreo"></span>
+          </div>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="pie-sitio">
+      <p>&copy; 2026 Tienda Online Duoc UC. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="jscript.js"></script>
+  </body>
 </html>
