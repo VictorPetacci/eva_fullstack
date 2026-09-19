@@ -3,75 +3,86 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Productos - Tienda en Línea DSY1104</title>
+    <title>Tienda en Linea - DSY1104</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="encabezado-sitio">
       <div class="contenedor">
-        <a href="index.html" class="logo-sitio">
-          <h1>Mi Tienda en Línea</h1>
-        </a>
-
+        <h1>Mi Tienda en Linea</h1>
         <nav aria-label="Navegación principal">
           <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="productos.html" aria-current="page">Productos</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="blogs.html">Blogs</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="iniciar-sesion.html">Iniciar Sesión</a></li>
+            <li><a href="registro.html">Registro</a></li>
+
           </ul>
         </nav>
-
-        <div class="acciones-header">
-          <nav class="nav-cuenta" aria-label="Cuenta de usuario">
-            <a href="login.html">Iniciar sesión</a>
-            <span aria-hidden="true">|</span>
-            <a href="registro.html">Registrar usuario</a>
-          </nav>
-          <a href="carrito.html" class="enlace-carrito" aria-label="Ver carrito de compras">
-            🛒 Carrito (<span id="contador-carrito">0</span>)
-          </a>
-        </div>
       </div>
     </header>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" class="boton-volver" onclick="history.back()">
+      Volver
+    </button>
+    <section id="productos" class="seccion-productos">
+        <h2>Productos Destacados</h2>
 
-    <main class="contenedor">
-      <button type="button" class="boton-volver" onclick="history.back()">
-        Volver
-      </button>
-      <section id="listado-productos">
-        <h2>Todos los Productos</h2>
-        <p class="texto-ayuda">
-          Haz clic en un producto para ver el detalle o presiona "Añadir al carrito" para comprarlo directamente.
-        </p>
-        <div id="contenedor-productos" class="seccion-productos"></div>
+        <a class="enlace-producto" href="detalle-producto.html?producto=teclado">
+          <article class="tarjeta-producto">
+            <img
+              src="https://images.unsplash.com/photo-1541140532154-b024d705b90a?auto=format&fit=crop&w=600&q=80"
+              alt="Teclado mecánico gamer con iluminación"
+              loading="lazy"
+            />
+            <h3>Teclado Mecánico RGB</h3>
+            <p>Respuesta rápida y switches diseñados para largas partidas.</p>
+            <button type="button">Comprar</button>
+          </article>
+        </a>
+
+        <a class="enlace-producto" href="detalle-producto.html?producto=mouse">
+          <article class="tarjeta-producto">
+            <img
+              src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=600&q=80"
+              alt="Mouse gamer ergonómico"
+              loading="lazy"
+            />
+            <h3>Mouse Gamer Pro</h3>
+            <p>Precisión y control para competir al máximo nivel.</p>
+            <button type="button">Comprar</button>
+          </article>
+        </a>
+
+        <a class="enlace-producto" href="detalle-producto.html?producto=audifonos">
+          <article class="tarjeta-producto">
+            <img
+              src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80"
+              alt="Audífonos inalámbricos para videojuegos"
+              loading="lazy"
+            />
+            <h3>Audífonos Inalámbricos</h3>
+            <p>Sonido envolvente para escuchar cada movimiento.</p>
+            <button type="button">Comprar</button>
+          </article>
+        </a>
       </section>
-    </main>
+    
+</body>
+</html>
+
+
 
     <footer class="pie-sitio">
-      <div class="contenedor pie-contenido">
-        <div class="pie-columna">
-          <h3>Mi Tienda en Línea</h3>
-          <ul class="pie-categorias">
-            <li><a href="productos.html">Teclados</a></li>
-            <li><a href="productos.html">Mouses</a></li>
-            <li><a href="productos.html">Audífonos</a></li>
-          </ul>
-        </div>
-
-        <div class="pie-columna">
-          <h3>Mantente al día</h3>
-          <form class="formulario-newsletter" aria-label="Suscripción al boletín">
-            <label for="correoBoletin">Recibe nuestras novedades</label>
-            <div class="grupo-newsletter">
-              <input type="email" id="correoBoletin" name="correoBoletin" placeholder="tu@correo.cl" />
-              <button type="submit">Suscribir</button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <p class="pie-copyright">&copy; 2026 Tienda Online Duoc UC. Todos los derechos reservados.</p>
+      <p>&copy; 2026 Tienda Online Duoc UC. Todos los derechos reservados.</p>
     </footer>
 
     <script src="jscript.js"></script>
