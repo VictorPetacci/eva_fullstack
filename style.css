@@ -120,6 +120,13 @@ section h2 {
   color: #b5b5b5;
 }
 
+.precio-producto {
+  color: #f28c00;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 10px 0;
+}
+
 button {
   background-color: #f28c00;
   border: 0;
