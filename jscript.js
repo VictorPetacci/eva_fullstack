@@ -29,48 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  if (contenedorDetalle) {
-    const productoSeleccionado = new URLSearchParams(window.location.search).get('producto');
-    const producto = productos[productoSeleccionado] || productos.teclado;
-
-    nombreRuta.textContent = producto.nombre;
-    contenedorDetalle.innerHTML = `
-      <div class="detalle-contenido">
-        <div class="detalle-imagen">
-          <img src="${producto.imagen}" alt="${producto.nombre}" />
-        </div>
-        <div class="detalle-informacion">
-          <h1>${producto.nombre}</h1>
-          <p>${producto.descripcion}</p>
-          <p class="precio-producto">${producto.precio}</p>
-          <h2>Características</h2>
-          <ul class="lista-detalles">
-            ${producto.detalles.map((detalle) => `<li>${detalle}</li>`).join('')}
-          </ul>
-          <button type="button">Agregar al carrito</button>
-        </div>
-      </div>
-    `;
-
-    const contenedorRelacionados = document.getElementById('contenedor-relacionados');
-    const productosRelacionados = Object.entries(productos).filter(
-      ([identificador]) => identificador !== (productoSeleccionado || 'teclado')
-    );
-
-    contenedorRelacionados.innerHTML = productosRelacionados
-      .map(
-        ([identificador, productoRelacionado]) => `
-          <a class="enlace-relacionado" href="detalle-producto.html?producto=${identificador}">
-            <article class="tarjeta-relacionada">
-              <img src="${productoRelacionado.imagen}" alt="${productoRelacionado.nombre}" />
-              <h3>${productoRelacionado.nombre}</h3>
-              <p>${productoRelacionado.precio}</p>
-            </article>
-          </a>
-        `
-      )
-      .join('');
-  }
 
   const formulario = document.getElementById('formularioRegistro');
   const formularioInicio = document.getElementById('formularioInicio');
