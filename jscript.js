@@ -1,4 +1,71 @@
+const CLAVE_CARRITO = 'carritoTienda';
+
+function obtenerCarrito() {
+  return JSON.parse(localStorage.getItem(CLAVE_CARRITO) || '[]');
+}
+
+function guardarCarrito(carrito) {
+  localStorage.setItem(CLAVE_CARRITO, JSON.stringify(carrito));
+}
+
+function mostrarVentanaProducto() {
+  const ventana = document.createElement('div');
+  ventana.className = 'ventana-emergente';
+  ventana.innerHTML = '<div class="contenido-emergente"><span class="icono-exito">&#10003;</span><h2>Producto agregado</h2><p>El producto se agregó al carrito.</p></div>';
+  document.body.appendChild(ventana);
+  setTimeout(() => ventana.remove(), 1000);
+}
+
+function renderizarCarrito() {
+  const lista = document.getElementById('lista-carrito');
+  const total = document.getElementById('total-carrito');
+  if (!lista || !total) return;
+
+  const carrito = obtenerCarrito();
+  if (carrito.length === 0) {
+    lista.innerHTML = '<p>Tu carrito está vacío.</p>';
+    total.textContent = '0';
+    return;
+  }
+
+  lista.innerHTML = carrito.map((producto, indice) => `
+    <article class="producto-carrito">
+      <strong>${producto.nombre}</strong>
+      <span>$${producto.precio.toLocaleString('es-CL')}</span>
+      <label>Cantidad
+        <input class="cantidad-carrito" type="number" min="1" value="${producto.cantidad}" data-indice="${indice}" />
+      </label>
+      <button type="button" class="eliminar-carrito" data-indice="${indice}">Eliminar</button>
+    </article>
+  `).join('');
+
+  const actualizar = () => {
+    const nuevoCarrito = obtenerCarrito();
+    total.textContent = nuevoCarrito.reduce((suma, producto) => suma + producto.precio * producto.cantidad, 0).toLocaleString('es-CL');
+  };
+
+  lista.querySelectorAll('.cantidad-carrito').forEach((input) => {
+    input.addEventListener('change', () => {
+      const carritoActual = obtenerCarrito();
+      carritoActual[input.dataset.indice].cantidad = Math.max(1, Number(input.value));
+      guardarCarrito(carritoActual);
+      renderizarCarrito();
+    });
+  });
+
+  lista.querySelectorAll('.eliminar-carrito').forEach((boton) => {
+    boton.addEventListener('click', () => {
+      const carritoActual = obtenerCarrito();
+      carritoActual.splice(boton.dataset.indice, 1);
+      guardarCarrito(carritoActual);
+      renderizarCarrito();
+    });
+  });
+  actualizar();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  renderizarCarrito();
   const contenedorDetalle = document.getElementById('contenedor-detalle');
   const nombreRuta = document.getElementById('ruta-nombre-producto');
 
@@ -48,21 +115,83 @@ document.addEventListener('DOMContentLoaded', () => {
 
   botonesAgregar.forEach((boton) => {
     boton.addEventListener('click', () => {
-      const ventana = document.createElement('div');
-      ventana.className = 'ventana-emergente';
-      ventana.innerHTML = `
-        <div class="contenido-emergente">
-          <span class="icono-exito">&#10003;</span>
-          <h2>Producto agregado</h2>
-          <p>El producto se agregó correctamente al carrito.</p>
-        </div>
-      `;
+      const carrito = obtenerCarrito();
+      const productoExistente = carrito.find((producto) => producto.nombre === boton.dataset.nombre);
+      if (productoExistente) {
+        productoExistente.cantidad += 1;
+      } else {
+        carrito.push({
+          nombre: boton.dataset.nombre,
+          precio: Number(boton.dataset.precio),
+          cantidad: 1
+        });
+      }
+      guardarCarrito(carrito);
+      mostrarVentanaProducto();
+    });
+  });
 
-      document.body.appendChild(ventana);
+  const botonComprar = document.getElementById('boton-comprar');
+  if (botonComprar) {
+    botonComprar.addEventListener('click', () => {
+      const mensaje = document.getElementById('mensaje-compra');
+      const carrito = obtenerCarrito();
+      if (carrito.length === 0) {
+        mensaje.textContent = 'Agrega productos antes de comprar.';
+        return;
+      }
+      localStorage.removeItem(CLAVE_CARRITO);
+      mensaje.textContent = 'Compra simulada realizada correctamente.';
+      renderizarCarrito();
+    });
+  }
 
-      setTimeout(() => {
-        ventana.remove();
-      }, 1200);
+  const formularioContacto = document.getElementById('formularioContacto');
+  if (formularioContacto) {
+    formularioContacto.addEventListener('submit', (evento) => {
+      evento.preventDefault();
+      const nombreContacto = document.getElementById('nombreContacto');
+      const correoContacto = document.getElementById('correoContacto');
+      const mensajeContacto = document.getElementById('mensajeContacto');
+      const errores = {
+        nombre: document.getElementById('errorNombreContacto'),
+        correo: document.getElementById('errorCorreoContacto'),
+        mensaje: document.getElementById('errorMensajeContacto')
+      };
+      let valido = true;
+      const correoPermitido = /^[^\s@]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/i;
+
+      errores.nombre.textContent = '';
+      errores.correo.textContent = '';
+      errores.mensaje.textContent = '';
+
+      if (!nombreContacto.value.trim() || nombreContacto.value.trim().length > 100) {
+        errores.nombre.textContent = 'El nombre es obligatorio y debe tener máximo 100 caracteres.';
+        valido = false;
+      }
+      if (!correoPermitido.test(correoContacto.value.trim())) {
+        errores.correo.textContent = 'Usa un correo @duoc.cl, @profesor.duoc.cl o @gmail.com.';
+        valido = false;
+      }
+      if (!mensajeContacto.value.trim() || mensajeContacto.value.trim().length > 500) {
+        errores.mensaje.textContent = 'El mensaje es obligatorio y debe tener máximo 500 caracteres.';
+        valido = false;
+      }
+      if (valido) {
+        document.getElementById('mensajeContactoExitoso').textContent = 'Mensaje enviado correctamente.';
+        formularioContacto.reset();
+      }
+    });
+  }
+
+  ['formularioProducto', 'formularioUsuario'].forEach((idFormulario) => {
+    const formularioAdmin = document.getElementById(idFormulario);
+    if (!formularioAdmin) return;
+    formularioAdmin.addEventListener('submit', (evento) => {
+      evento.preventDefault();
+      const mensaje = formularioAdmin.querySelector('.mensaje-administrador');
+      mensaje.textContent = 'Datos guardados correctamente.';
+      formularioAdmin.reset();
     });
   });
 

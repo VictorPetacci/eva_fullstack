@@ -48,6 +48,21 @@ h1, h2, h3, button, nav a {
   white-space: nowrap;
 }
 
+.bloque-navegacion {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
+
+.encabezado-sitio .contenedor > nav {
+  margin-left: auto;
+}
+
+.bloque-navegacion .cuadro-cuenta {
+  align-self: flex-end;
+}
+
 .acciones-header {
   align-items: center;
   display: flex;
@@ -79,33 +94,72 @@ nav a:hover, nav a:focus-visible {
   color: #ffad1f;
 }
 
-.enlace-cuenta {
+.enlace-carrito {
   color: #f28c00;
+  text-decoration: none;
+}
+
+.logo-carrito {
+  font-size: 1.5rem;
+}
+
+.enlace-carrito:hover,
+.enlace-carrito:focus-visible {
+  color: #ffd23f;
+}
+
+.enlace-cuenta {
+  color: #f5f5f5;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.78rem;
   font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .enlace-cuenta:hover,
 .enlace-cuenta:focus-visible {
-  color: #ffd23f;
+  color: #111111;
 }
 
 .cuadro-cuenta {
   background-color: #2b2b2b;
   border: 1px solid #f28c00;
+  box-sizing: border-box;
   display: flex;
-  gap: 12px;
-  padding: 10px;
+  gap: 10px;
+  align-items: center;
+  height: 38px;
+  justify-content: flex-end;
+  margin-top: 10px;
+  padding: 8px 16px;
+  width: fit-content;
+}
+
+.cuadro-cuenta:hover {
+  background-color: #ffad1f;
 }
 
 main {
   padding: 48px 24px;
 }
 
+.barra-pagina {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.barra-cuenta-inicio {
+  justify-content: flex-end;
+}
+
 .boton-volver {
   background-color: #2b2b2b;
   border: 1px solid #f28c00;
   color: #f5f5f5;
-  margin-bottom: 24px;
   padding: 8px 16px;
 }
 
@@ -408,6 +462,123 @@ button:hover, button:focus-visible {
   width: 100%;
 }
 
+.formulario-contacto {
+  background-color: #1d1d1d;
+  border: 1px solid #f28c00;
+  margin-top: 25px;
+  max-width: 620px;
+  padding: 24px;
+}
+
+.formulario-contacto textarea {
+  background-color: #111111;
+  border: 1px solid #b5b5b5;
+  color: #f5f5f5;
+  font: inherit;
+  min-height: 120px;
+  padding: 10px 12px;
+  resize: vertical;
+  width: 100%;
+}
+
+.formulario-contacto textarea:focus {
+  border-color: #ffad1f;
+  outline: none;
+}
+
+.formulario-contacto button {
+  margin-top: 10px;
+}
+
+.pagina-carrito {
+  min-height: 500px;
+}
+
+.lista-carrito {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.producto-carrito {
+  align-items: center;
+  background-color: #2b2b2b;
+  border: 1px solid #f28c00;
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.producto-carrito input {
+  max-width: 80px;
+}
+
+.resumen-carrito {
+  align-items: center;
+  border-top: 2px solid #f28c00;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  margin-top: 25px;
+  padding-top: 20px;
+}
+
+.eliminar-carrito {
+  background-color: #8f2222;
+}
+
+.eliminar-carrito:hover {
+  background-color: #d94343;
+  color: white;
+}
+
+@media (max-width: 640px) {
+  .producto-carrito,
+  .resumen-carrito {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+.boton-administrador {
+  background-color: #2b2b2b;
+  border: 1px solid #f28c00;
+  color: #f28c00;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 16px;
+  text-decoration: none;
+}
+
+.boton-administrador:hover {
+  background-color: #ffad1f;
+  color: #111111;
+}
+
+.boton-articulo {
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #f28c00;
+  color: #ffad1f;
+  display: inline-flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 12px;
+  padding: 10px 16px;
+  text-decoration: none;
+}
+
+.boton-articulo span {
+  font-size: 1.2rem;
+}
+
+.boton-articulo:hover,
+.boton-articulo:focus-visible {
+  background-color: #f28c00;
+  color: #111111;
+}
+
 .pagina-registro {
   background-color: #1d1d1d;
   color: #f5f5f5;
@@ -535,9 +706,19 @@ input:focus {
     padding: 0 18px;
   }
 
+  .barra-pagina {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
   .cuadro-cuenta {
     margin-top: 10px;
   }
+
+  .cuadro-cuenta {
+    margin-left: auto;
+}
 
   .tarjeta-producto {
     width: 100%;

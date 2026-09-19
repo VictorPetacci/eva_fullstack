@@ -15,18 +15,27 @@
           <ul>
             <li><a href="../index.html">Inicio</a></li>
             <li><a href="../productos.html">Productos</a></li>
+            <li><a href="../nosotros.html">Nosotros</a></li>
+            <li><a href="../blogs.html">Blogs</a></li>
             <li><a href="../index.html#contacto">Contacto</a></li>
+            <li>
+              <a class="enlace-carrito" href="../carrito.html" aria-label="Ver carrito" title="Ver carrito">
+                <span class="logo-carrito" aria-hidden="true">&#128722;</span>
+              </a>
+            </li>
           </ul>
         </nav>
+      </div>
+    </header>
+
+    <main class="contenedor">
+      <div class="barra-pagina">
+        <button type="button" class="boton-volver" onclick="history.back()">Volver</button>
         <div class="cuadro-cuenta">
           <a class="enlace-cuenta" href="../iniciar-sesion.html">Iniciar Sesión</a>
           <a class="enlace-cuenta" href="../registro.html">Registro</a>
         </div>
       </div>
-    </header>
-
-    <main class="contenedor">
-      <button type="button" class="boton-volver" onclick="history.back()">Volver</button>
       <nav class="ruta-navegacion"><a href="../productos.html">Productos</a> &gt; Mouse</nav>
       <section class="seccion-detalle-producto">
         <div class="detalle-contenido">
@@ -43,7 +52,7 @@
               <li>Sensor de alta precisión</li>
               <li>Botones programables</li>
             </ul>
-            <button type="button" class="boton-agregar">Agregar al carrito</button>
+            <button type="button" class="boton-agregar" data-nombre="Mouse Gamer Pro" data-precio="29990">Agregar al carrito</button>
           </div>
         </div>
       </section>

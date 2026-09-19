@@ -1,0 +1,19 @@
+* { box-sizing: border-box; }
+body { background: #111; color: #f5f5f5; font-family: Arial, sans-serif; margin: 0; }
+.panel-administrador { display: flex; min-height: 100vh; }
+.menu-lateral { background: #1d1d1d; border-right: 2px solid #f28c00; padding: 25px 15px; width: 230px; }
+.menu-lateral h1 { color: #ffad1f; font-size: 1.3rem; margin-top: 0; }
+.menu-lateral a { color: #f5f5f5; display: block; padding: 12px; text-decoration: none; }
+.menu-lateral a:hover { background: #f28c00; color: #111; }
+.contenido-administrador { padding: 35px; width: 100%; }
+.contenido-administrador h2 { border-left: 4px solid #f28c00; padding-left: 12px; }
+.tabla-administrador { border-collapse: collapse; margin-top: 25px; width: 100%; }
+.tabla-administrador th, .tabla-administrador td { border: 1px solid #555; padding: 12px; text-align: left; }
+.tabla-administrador th { background: #2b2b2b; color: #ffd23f; }
+.boton-administrador { background: #f28c00; border: 0; color: #111; cursor: pointer; padding: 10px 15px; }
+.formulario-administrador { background: #1d1d1d; border: 1px solid #f28c00; max-width: 650px; padding: 25px; }
+.formulario-administrador label { color: #ffd23f; display: block; margin: 14px 0 6px; }
+.formulario-administrador input, .formulario-administrador select { background: #111; border: 1px solid #777; color: #f5f5f5; padding: 10px; width: 100%; }
+.formulario-administrador button { margin-top: 20px; }
+.mensaje-administrador { color: #7dffad; }
+@media (max-width: 640px) { .panel-administrador { display: block; } .menu-lateral { width: 100%; } .contenido-administrador { padding: 20px; } }

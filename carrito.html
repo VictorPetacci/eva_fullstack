@@ -3,20 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detalle de Producto - Tienda en Línea DSY1104</title>
+    <title>Carrito - Tienda en Línea</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="encabezado-sitio">
       <div class="contenedor">
-        <a href="index.html" class="logo-sitio">
-          <h1>Mi Tienda en Línea</h1>
-        </a>
-
+        <a href="index.html" class="logo-sitio"><h1>Mi Tienda en Línea</h1></a>
         <nav aria-label="Navegación principal">
           <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="productos.html" aria-current="page">Productos</a></li>
+            <li><a href="productos.html">Productos</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="blogs.html">Blogs</a></li>
             <li><a href="index.html#contacto">Contacto</a></li>
@@ -27,11 +24,10 @@
             </li>
           </ul>
         </nav>
-
       </div>
     </header>
 
-    <main class="contenedor">
+    <main class="contenedor pagina-carrito">
       <div class="barra-pagina">
         <button type="button" class="boton-volver" onclick="history.back()">Volver</button>
         <div class="cuadro-cuenta">
@@ -39,25 +35,14 @@
           <a class="enlace-cuenta" href="registro.html">Registro</a>
         </div>
       </div>
-      <nav aria-label="Ruta de navegación" class="ruta-navegacion">
-        <a href="index.html">Home</a> &gt;
-        <a href="productos.html">Productos</a> &gt;
-        <span id="ruta-nombre-producto">Producto</span>
-      </nav>
-
-      <section id="detalle-producto" class="seccion-detalle-producto">
-        <div id="contenedor-detalle"></div>
-      </section>
-
-      <section id="productos-relacionados">
-        <h2>Productos Relacionados</h2>
-        <div id="contenedor-relacionados" class="seccion-productos"></div>
-      </section>
+      <h2>Mi carrito</h2>
+      <div id="lista-carrito" class="lista-carrito"></div>
+      <div class="resumen-carrito">
+        <strong>Total: $<span id="total-carrito">0</span></strong>
+        <button type="button" id="boton-comprar">Simular compra</button>
+      </div>
+      <p id="mensaje-compra" class="mensaje-exito"></p>
     </main>
-
-    <footer class="pie-sitio">
-      <p class="pie-copyright">&copy; 2026 Tienda Online Duoc UC. Todos los derechos reservados.</p>
-    </footer>
 
     <script src="jscript.js"></script>
   </body>

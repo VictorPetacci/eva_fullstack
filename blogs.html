@@ -3,20 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detalle de Producto - Tienda en Línea DSY1104</title>
+    <title>Blogs - Tienda en Línea</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="encabezado-sitio">
       <div class="contenedor">
-        <a href="index.html" class="logo-sitio">
-          <h1>Mi Tienda en Línea</h1>
-        </a>
-
+        <a href="index.html" class="logo-sitio"><h1>Mi Tienda en Línea</h1></a>
         <nav aria-label="Navegación principal">
           <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="productos.html" aria-current="page">Productos</a></li>
+            <li><a href="productos.html">Productos</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="blogs.html">Blogs</a></li>
             <li><a href="index.html#contacto">Contacto</a></li>
@@ -27,10 +24,8 @@
             </li>
           </ul>
         </nav>
-
       </div>
     </header>
-
     <main class="contenedor">
       <div class="barra-pagina">
         <button type="button" class="boton-volver" onclick="history.back()">Volver</button>
@@ -39,26 +34,22 @@
           <a class="enlace-cuenta" href="registro.html">Registro</a>
         </div>
       </div>
-      <nav aria-label="Ruta de navegación" class="ruta-navegacion">
-        <a href="index.html">Home</a> &gt;
-        <a href="productos.html">Productos</a> &gt;
-        <span id="ruta-nombre-producto">Producto</span>
-      </nav>
-
-      <section id="detalle-producto" class="seccion-detalle-producto">
-        <div id="contenedor-detalle"></div>
-      </section>
-
-      <section id="productos-relacionados">
-        <h2>Productos Relacionados</h2>
-        <div id="contenedor-relacionados" class="seccion-productos"></div>
+      <section>
+        <h2>Blog</h2>
+        <div class="seccion-productos">
+          <article class="tarjeta-producto">
+            <h3>Cómo elegir un teclado gamer</h3>
+            <p>Conoce las diferencias entre switches y encuentra el teclado adecuado.</p>
+            <a class="boton-articulo" href="detalle-blog1.html">Leer artículo <span aria-hidden="true">&rarr;</span></a>
+          </article>
+          <article class="tarjeta-producto">
+            <h3>Consejos para mejorar tu espacio</h3>
+            <p>Ideas simples para ordenar y aprovechar mejor tu escritorio gamer.</p>
+            <a class="boton-articulo" href="detalle-blog2.html">Leer artículo <span aria-hidden="true">&rarr;</span></a>
+          </article>
+        </div>
       </section>
     </main>
-
-    <footer class="pie-sitio">
-      <p class="pie-copyright">&copy; 2026 Tienda Online Duoc UC. Todos los derechos reservados.</p>
-    </footer>
-
-    <script src="jscript.js"></script>
+    <footer class="pie-sitio"><p>&copy; 2026 Tienda Online Duoc UC.</p></footer>
   </body>
 </html>

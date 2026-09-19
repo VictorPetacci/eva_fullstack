@@ -10,22 +10,33 @@
     <header class="encabezado-sitio">
       <div class="contenedor">
         <h1>Mi Tienda en Linea</h1>
-        <nav aria-label="Navegación principal">
-          <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="productos.html">Productos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-          </ul>
-        </nav>
+        <div class="bloque-navegacion">
+          <nav aria-label="Navegación principal">
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="productos.html">Productos</a></li>
+              <li><a href="nosotros.html">Nosotros</a></li>
+              <li><a href="blogs.html">Blogs</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+              <li>
+                <a class="enlace-carrito" href="carrito.html" aria-label="Ver carrito" title="Ver carrito">
+                  <span class="logo-carrito" aria-hidden="true">&#128722;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
 
-        <div class="cuadro-cuenta">
-          <a class="enlace-cuenta" href="iniciar-sesion.html">Iniciar Sesión</a>
-          <a class="enlace-cuenta" href="registro.html">Registro</a>
         </div>
       </div>
     </header>
 
     <main class="contenedor">
+      <div class="barra-pagina barra-cuenta-inicio">
+        <div class="cuadro-cuenta">
+          <a class="enlace-cuenta" href="iniciar-sesion.html">Iniciar Sesión</a>
+          <a class="enlace-cuenta" href="registro.html">Registro</a>
+        </div>
+      </div>
       <section id="destacado" class="seccion-destacada">
         <h2>Video de Lanzamiento</h2>
         <div class="contenedor-video">
@@ -75,6 +86,25 @@
             ></iframe>
           </div>
         </div>
+
+        <form id="formularioContacto" class="formulario-contacto" novalidate>
+          <h3>Escríbenos</h3>
+          <label for="nombreContacto">Nombre</label>
+          <input id="nombreContacto" name="nombreContacto" maxlength="100" required />
+          <span id="errorNombreContacto" class="mensaje-error"></span>
+          <label for="correoContacto">Correo</label>
+          <input id="correoContacto" name="correoContacto" type="email" required />
+          <span id="errorCorreoContacto" class="mensaje-error"></span>
+          <label for="mensajeContacto">Mensaje</label>
+          <textarea id="mensajeContacto" name="mensajeContacto" maxlength="500" required></textarea>
+          <span id="errorMensajeContacto" class="mensaje-error"></span>
+          <button type="submit">Enviar mensaje</button>
+          <p id="mensajeContactoExitoso" class="mensaje-exito"></p>
+        </form>
+
+        <a class="boton-administrador" href="admin/index.html">
+          Administrador
+        </a>
       </section>
 
     <footer class="pie-sitio">

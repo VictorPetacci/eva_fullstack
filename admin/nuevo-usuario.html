@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuevo usuario - Administración</title>
+    <link rel="stylesheet" href="admin-style.css" />
+  </head>
+  <body>
+    <div class="panel-administrador">
+      <aside class="menu-lateral">
+        <h1>Administración</h1>
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="usuarios.html">Usuarios</a>
+        <a href="nuevo-producto.html">Nuevo producto</a>
+        <a href="nuevo-usuario.html">Nuevo usuario</a>
+        <a href="../index.html">Volver a la tienda</a>
+      </aside>
+      <main class="contenido-administrador">
+        <h2>Agregar usuario</h2>
+        <form class="formulario-administrador" id="formularioUsuario">
+          <label for="runUsuario">RUN</label>
+          <input id="runUsuario" name="runUsuario" placeholder="12.345.678-9" required />
+          <label for="nombreUsuario">Nombre</label>
+          <input id="nombreUsuario" name="nombreUsuario" required />
+          <label for="correoUsuario">Correo</label>
+          <input id="correoUsuario" name="correoUsuario" type="email" required />
+          <label for="rolUsuario">Rol</label>
+          <select id="rolUsuario" name="rolUsuario" required>
+            <option value="">Selecciona un rol</option>
+            <option>Admin</option>
+            <option>Vendedor</option>
+            <option>Cliente</option>
+          </select>
+          <button class="boton-administrador" type="submit">Guardar usuario</button>
+          <p id="mensajeUsuario" class="mensaje-administrador"></p>
+        </form>
+      </main>
+    </div>
+    <script src="../jscript.js"></script>
+  </body>
+</html>

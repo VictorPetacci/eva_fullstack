@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuevo producto - Administración</title>
+    <link rel="stylesheet" href="admin-style.css" />
+  </head>
+  <body>
+    <div class="panel-administrador">
+      <aside class="menu-lateral">
+        <h1>Administración</h1>
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="usuarios.html">Usuarios</a>
+        <a href="nuevo-producto.html">Nuevo producto</a>
+        <a href="nuevo-usuario.html">Nuevo usuario</a>
+        <a href="../index.html">Volver a la tienda</a>
+      </aside>
+      <main class="contenido-administrador">
+        <h2>Agregar producto</h2>
+        <form class="formulario-administrador" id="formularioProducto">
+          <label for="codigoProducto">Código</label>
+          <input id="codigoProducto" name="codigoProducto" required />
+          <label for="nombreProducto">Nombre</label>
+          <input id="nombreProducto" name="nombreProducto" required />
+          <label for="precioProducto">Precio</label>
+          <input id="precioProducto" name="precioProducto" type="number" min="0" required />
+          <label for="stockProducto">Stock</label>
+          <input id="stockProducto" name="stockProducto" type="number" min="0" required />
+          <label for="stockCritico">Stock crítico</label>
+          <input id="stockCritico" name="stockCritico" type="number" min="0" required />
+          <label for="categoriaProducto">Categoría</label>
+          <select id="categoriaProducto" name="categoriaProducto" required>
+            <option value="">Selecciona una categoría</option>
+            <option>Teclados</option>
+            <option>Mouses</option>
+            <option>Audífonos</option>
+          </select>
+          <button class="boton-administrador" type="submit">Guardar producto</button>
+          <p id="mensajeProducto" class="mensaje-administrador"></p>
+        </form>
+      </main>
+    </div>
+    <script src="../jscript.js"></script>
+  </body>
+</html>
