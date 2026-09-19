@@ -143,4 +143,35 @@ document.addEventListener('DOMContentLoaded', () => {
   renderizarProductos();
   renderizarDetalleProducto();
   actualizarContadorCarrito();
+
+  const formulario = document.getElementById('formularioRegistro');
+  if (!formulario) return;
+
+  formulario.addEventListener('submit', (evento) => {
+    const nombre = document.getElementById('nombre');
+    const correo = document.getElementById('correo');
+    const errorNombre = document.getElementById('errorNombre');
+    const errorCorreo = document.getElementById('errorCorreo');
+    let formularioValido = true;
+
+    if (nombre.value.trim().length < 3) {
+      errorNombre.textContent = 'El nombre debe tener al menos 3 caracteres.';
+      formularioValido = false;
+    } else {
+      errorNombre.textContent = '';
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo.value)) {
+      errorCorreo.textContent = 'Ingrese un correo electrónico válido.';
+      formularioValido = false;
+    } else {
+      errorCorreo.textContent = '';
+    }
+
+    if (!formularioValido) {
+      evento.preventDefault();
+    } else {
+      alert('Formulario enviado con éxito');
+    }
+  });
 });

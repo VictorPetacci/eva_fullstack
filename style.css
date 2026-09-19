@@ -479,3 +479,86 @@ input:focus {
     width: 100%;
   }
 }
+
+.boton-volver {
+  background-color: #2b2b2b;
+  border: 1px solid #f28c00;
+  color: #f5f5f5;
+  margin-bottom: 24px;
+  padding: 8px 16px;
+}
+
+.boton-volver:hover {
+  background-color: #ffad1f;
+  color: #111111;
+}
+
+.informacion-contacto {
+  background-color: #1d1d1d;
+  border: 1px solid #f28c00;
+  display: flex;
+  gap: 25px;
+  padding: 25px;
+}
+
+.informacion-contacto h3 {
+  color: #ffd23f;
+}
+
+.enlace-whatsapp,
+.redes-sociales a {
+  color: #ffad1f;
+  text-decoration: none;
+}
+
+.redes-sociales {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mapa-contacto {
+  width: 55%;
+}
+
+.mapa-contacto iframe {
+  border: 0;
+  height: 280px;
+  width: 100%;
+}
+
+.pagina-registro {
+  background-color: #1d1d1d;
+  border: 1px solid #f28c00;
+  margin: 40px auto;
+  max-width: 650px;
+  padding: 30px;
+}
+
+.pagina-registro h2 {
+  border-left: 0;
+  border-bottom: 3px solid #f28c00;
+  padding: 0 0 10px;
+  text-align: center;
+}
+
+.pagina-registro form {
+  background-color: #111111;
+  border: 1px solid #f28c00;
+  padding: 25px;
+}
+
+.pagina-registro button {
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .informacion-contacto {
+    display: block;
+  }
+
+  .mapa-contacto {
+    margin-top: 20px;
+    width: 100%;
+  }
+}

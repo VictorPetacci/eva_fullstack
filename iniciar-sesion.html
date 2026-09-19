@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión - Tienda en Línea</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="encabezado-sitio">
+      <div class="contenedor">
+        <h1>Mi Tienda en Línea</h1>
+        <nav aria-label="Navegación principal">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="iniciar-sesion.html">Iniciar Sesión</a></li>
+            <li><a href="registro.html">Registro</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="contenedor pagina-registro">
+      <button type="button" class="boton-volver" onclick="history.back()">
+        Volver
+      </button>
+      <h2>Iniciar Sesión</h2>
+
+      <form id="formularioInicio">
+        <div class="grupo-formulario">
+          <label for="correoInicio">Correo Electrónico:</label>
+          <input
+            type="email"
+            id="correoInicio"
+            name="correoInicio"
+            placeholder="ejemplo@correo.cl"
+            required
+          />
+        </div>
+
+        <div class="grupo-formulario">
+          <label for="contrasenaInicio">Contraseña:</label>
+          <input
+            type="password"
+            id="contrasenaInicio"
+            name="contrasenaInicio"
+            required
+          />
+        </div>
+
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+    </main>
+
+    <footer class="pie-sitio">
+      <p>&copy; 2026 Tienda Online Duoc UC. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="jscript.js"></script>
+  </body>
+</html>
