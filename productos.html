@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos - Tienda en Línea DSY1104</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="encabezado-sitio">
+      <div class="contenedor">
+        <a href="index.html" class="logo-sitio">
+          <h1>Mi Tienda en Línea</h1>
+        </a>
+
+        <nav aria-label="Navegación principal">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html" aria-current="page">Productos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="acciones-header">
+          <nav class="nav-cuenta" aria-label="Cuenta de usuario">
+            <a href="login.html">Iniciar sesión</a>
+            <span aria-hidden="true">|</span>
+            <a href="registro.html">Registrar usuario</a>
+          </nav>
+          <a href="carrito.html" class="enlace-carrito" aria-label="Ver carrito de compras">
+            🛒 Carrito (<span id="contador-carrito">0</span>)
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="contenedor">
+      <section id="listado-productos">
+        <h2>Todos los Productos</h2>
+        <p class="texto-ayuda">
+          Haz clic en un producto para ver el detalle o presiona "Añadir al carrito" para comprarlo directamente.
+        </p>
+        <div id="contenedor-productos" class="seccion-productos"></div>
+      </section>
+    </main>
+
+    <footer class="pie-sitio">
+      <div class="contenedor pie-contenido">
+        <div class="pie-columna">
+          <h3>Mi Tienda en Línea</h3>
+          <ul class="pie-categorias">
+            <li><a href="productos.html">Teclados</a></li>
+            <li><a href="productos.html">Mouses</a></li>
+            <li><a href="productos.html">Audífonos</a></li>
+          </ul>
+        </div>
+
+        <div class="pie-columna">
+          <h3>Mantente al día</h3>
+          <form class="formulario-newsletter" aria-label="Suscripción al boletín">
+            <label for="correoBoletin">Recibe nuestras novedades</label>
+            <div class="grupo-newsletter">
+              <input type="email" id="correoBoletin" name="correoBoletin" placeholder="tu@correo.cl" />
+              <button type="submit">Suscribir</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <p class="pie-copyright">&copy; 2026 Tienda Online Duoc UC. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="jscript.js"></script>
+  </body>
+</html>

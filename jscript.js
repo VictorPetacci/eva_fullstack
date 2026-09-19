@@ -9,7 +9,7 @@ const productos = [
   {
     id: 2,
     nombre: "Mouse Stax Pro Edition",
-    descripcion: "Sensor óptico de alta precisión",
+     descripcion: "Sensor óptico de alta precisión",
     precio: 25000,
     imagen: "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=600&q=80"
   },
@@ -55,25 +55,25 @@ function agregarAlCarrito(idProducto) {
   actualizarContadorCarrito();
 }
 
-function renderizarProductos() {
-  const contenedor = document.getElementById('contenedor-productos');
-  if (!contenedor) return;
-
-  let html = '';
-
-  productos.forEach(producto => {
-    html += `
-      <article class="tarjeta-producto">
+function crearTarjetaProducto(producto) {
+  return `
+    <article class="tarjeta-producto">
+      <a href="detalle-producto.html?id=${producto.id}" class="enlace-producto">
         <img src="${producto.imagen}" alt="${producto.nombre}" loading="lazy" />
         <h3>${producto.nombre}</h3>
         <p>${producto.descripcion}</p>
         <p class="precio-producto">$${producto.precio.toLocaleString('es-CL')}</p>
-        <button type="button" onclick="agregarAlCarrito(${producto.id})">Añadir al carrito</button>
-      </article>
-    `;
-  });
+      </a>
+      <button type="button" onclick="agregarAlCarrito(${producto.id})">Añadir al carrito</button>
+    </article>
+  `;
+}
 
-  contenedor.innerHTML = html;
+function renderizarProductos() {
+  const contenedor = document.getElementById('contenedor-productos');
+  if (!contenedor) return;
+
+  contenedor.innerHTML = productos.map(crearTarjetaProducto).join('');
 }
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -357,3 +357,35 @@ input:focus {
     align-items: flex-start;
   }
 }
+
+.texto-ayuda {
+  color: #b5b5b5;
+  margin-top: -8px;
+  font-size: 0.9rem;
+}
+
+.tarjeta-producto a.enlace-producto {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tarjeta-producto a.enlace-producto:hover h3,
+.tarjeta-producto a.enlace-producto:focus-visible h3 {
+  color: #ffad1f;
+}
+
+#listado-productos .tarjeta-producto {
+  width: calc(25% - 15px);
+}
+
+@media (max-width: 900px) {
+  #listado-productos .tarjeta-producto {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 640px) {
+  #listado-productos .tarjeta-producto {
+    width: 100%;
+  }
+}
