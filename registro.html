@@ -16,24 +16,18 @@
             <li><a href="productos.html">Productos</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
             <li>
               <a class="enlace-carrito" href="carrito.html" aria-label="Ver carrito" title="Ver carrito">
-                <span class="logo-carrito" aria-hidden="true">&#128722;</span>
+                <span class="logo-carrito" aria-hidden="true">&#128722;<span class="contador-carrito">0</span></span>
               </a>
             </li>
-            <li><a href="index.html#contacto">Contacto</a></li>
           </ul>
         </nav>
       </div>
     </header>
     <main class="contenedor pagina-registro">
-      <div class="barra-pagina">
-        <button type="button" class="boton-volver" onclick="history.back()">Volver</button>
-        <div class="cuadro-cuenta">
-          <a class="enlace-cuenta" href="iniciar-sesion.html">Iniciar Sesión</a>
-          <a class="enlace-cuenta" href="registro.html">Registro</a>
-        </div>
-      </div>
+      <button type="button" class="boton-volver" onclick="history.back()">Volver</button>
       <h2>Formulario de Registro</h2>
 
         <form id="formularioRegistro" novalidate>
@@ -41,6 +35,34 @@
             <label for="nombre">Nombre Completo:</label>
             <input type="text" id="nombre" name="nombre" required />
             <span class="mensaje-error" id="errorNombre"></span>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="runRegistro">RUN:</label>
+            <input type="text" id="runRegistro" name="runRegistro" placeholder="12345678K" required />
+            <span class="mensaje-error" id="errorRunRegistro"></span>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="direccionRegistro">Dirección:</label>
+            <input type="text" id="direccionRegistro" name="direccionRegistro" required />
+            <span class="mensaje-error" id="errorDireccionRegistro"></span>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="regionRegistro">Región:</label>
+            <select id="regionRegistro" name="regionRegistro" required>
+              <option value="">Selecciona una región</option>
+            </select>
+            <span class="mensaje-error" id="errorRegionRegistro"></span>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="comunaRegistro">Comuna:</label>
+            <select id="comunaRegistro" name="comunaRegistro" required>
+              <option value="">Selecciona una comuna</option>
+            </select>
+            <span class="mensaje-error" id="errorComunaRegistro"></span>
           </div>
 
           <div class="grupo-formulario">

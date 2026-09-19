@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Audífonos Inalámbricos</title>
-    <link rel="stylesheet" href="../style.css" />
+    <title>Teclado Mecánico RGB</title>
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
@@ -20,7 +19,7 @@
             <li><a href="../index.html#contacto">Contacto</a></li>
             <li>
               <a class="enlace-carrito" href="../carrito.html" aria-label="Ver carrito" title="Ver carrito">
-                <span class="logo-carrito" aria-hidden="true">&#128722;</span>
+                <span class="logo-carrito" aria-hidden="true">&#128722;<span class="contador-carrito">0</span></span>
               </a>
             </li>
           </ul>
@@ -36,23 +35,25 @@
           <a class="enlace-cuenta" href="../registro.html">Registro</a>
         </div>
       </div>
-      <nav class="ruta-navegacion"><a href="../productos.html">Productos</a> &gt; Audífonos</nav>
+      <nav class="ruta-navegacion"><a href="../productos.html">Productos</a> &gt; Teclado</nav>
       <section class="seccion-detalle-producto">
         <div class="detalle-contenido">
           <div class="detalle-imagen">
-            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="Audífonos inalámbricos para videojuegos" />
+            <img src="https://images.unsplash.com/photo-1541140532154-b024d705b90a?auto=format&fit=crop&w=800&q=80" alt="Teclado mecánico gamer con iluminación" />
           </div>
           <div class="detalle-informacion">
-            <h1>Audífonos Inalámbricos</h1>
-            <p>Audífonos inalámbricos con sonido envolvente para disfrutar cada movimiento.</p>
-            <p class="precio-producto">$39.990</p>
+            <h1>Teclado Mecánico RGB</h1>
+            <p>Teclado mecánico con iluminación RGB y respuesta rápida para jugar y trabajar.</p>
+            <p class="precio-producto">$49.990</p>
             <h2>Características</h2>
             <ul class="lista-detalles">
-              <li>Conexión inalámbrica</li>
-              <li>Sonido envolvente</li>
-              <li>Micrófono incorporado</li>
+              <li>Switches mecánicos</li>
+              <li>Iluminación RGB</li>
+              <li>Conexión USB</li>
             </ul>
-            <button type="button" class="boton-agregar" data-nombre="Audífonos Inalámbricos" data-precio="39990">Agregar al carrito</button>
+            <label class="selector-cantidad" for="cantidadProducto">Cantidad:</label>
+            <input class="cantidad-producto" id="cantidadProducto" type="number" min="1" value="1" />
+            <button type="button" class="boton-agregar" data-nombre="Teclado Mecánico RGB" data-precio="49990">Agregar al carrito</button>
           </div>
         </div>
       </section>
@@ -60,18 +61,18 @@
       <section id="productos-relacionados">
         <h2>Productos relacionados</h2>
         <div class="seccion-productos">
-          <a class="enlace-relacionado" href="../detalle-teclado/index.html">
-            <article class="tarjeta-relacionada">
-              <img src="https://images.unsplash.com/photo-1541140532154-b024d705b90a?auto=format&fit=crop&w=600&q=80" alt="Teclado mecánico" />
-              <h3>Teclado Mecánico RGB</h3>
-              <p>$49.990</p>
-            </article>
-          </a>
-          <a class="enlace-relacionado" href="../detalle-mouse/index.html">
+          <a class="enlace-relacionado" href="../detalle-mouse/index-det-mouse.html">
             <article class="tarjeta-relacionada">
               <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=600&q=80" alt="Mouse gamer" />
               <h3>Mouse Gamer Pro</h3>
               <p>$29.990</p>
+            </article>
+          </a>
+          <a class="enlace-relacionado" href="../detalle-audifonos/index-det-audifonos.html">
+            <article class="tarjeta-relacionada">
+              <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80" alt="Audífonos inalámbricos" />
+              <h3>Audífonos Inalámbricos</h3>
+              <p>$39.990</p>
             </article>
           </a>
         </div>
