@@ -44,6 +44,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const mensajeRegistroExitoso = document.getElementById('mensajeRegistroExitoso');
   const mensajeInicioExitoso = document.getElementById('mensajeInicioExitoso');
 
+  const botonesAgregar = document.querySelectorAll('.boton-agregar');
+
+  botonesAgregar.forEach((boton) => {
+    boton.addEventListener('click', () => {
+      const ventana = document.createElement('div');
+      ventana.className = 'ventana-emergente';
+      ventana.innerHTML = `
+        <div class="contenido-emergente">
+          <span class="icono-exito">&#10003;</span>
+          <h2>Producto agregado</h2>
+          <p>El producto se agregó correctamente al carrito.</p>
+        </div>
+      `;
+
+      document.body.appendChild(ventana);
+
+      setTimeout(() => {
+        ventana.remove();
+      }, 1200);
+    });
+  });
+
   const contrasenaValida = (valor) =>
     valor.length >= 8 &&
     /[A-Z]/.test(valor) &&
