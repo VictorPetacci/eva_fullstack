@@ -41,14 +41,14 @@ function actualizarContadorCarrito() {
   contador.textContent = totalItems;
 }
 
-function agregarAlCarrito(idProducto) {
+function agregarAlCarrito(idProducto, cantidad = 1) {
   const carrito = obtenerCarrito();
   const itemExistente = carrito.find((item) => item.id === idProducto);
 
   if (itemExistente) {
-    itemExistente.cantidad += 1;
+    itemExistente.cantidad += cantidad;
   } else {
-    carrito.push({ id: idProducto, cantidad: 1 });
+    carrito.push({ id: idProducto, cantidad });
   }
 
   guardarCarrito(carrito);
@@ -76,7 +76,71 @@ function renderizarProductos() {
   contenedor.innerHTML = productos.map(crearTarjetaProducto).join('');
 }
 
+function obtenerIdProductoDesdeUrl() {
+  const parametros = new URLSearchParams(window.location.search);
+  const id = parseInt(parametros.get('id'), 10);
+  return Number.isNaN(id) ? null : id;
+}
+
+function renderizarDetalleProducto() {
+  const contenedor = document.getElementById('contenedor-detalle');
+  if (!contenedor) return;
+
+  const idProducto = obtenerIdProductoDesdeUrl();
+  const producto = productos.find((item) => item.id === idProducto);
+
+  if (!producto) {
+    contenedor.innerHTML = '<p>Producto no encontrado.</p>';
+    return;
+  }
+
+  document.getElementById('ruta-nombre-producto').textContent = producto.nombre;
+  document.title = `${producto.nombre} - Tienda en Línea DSY1104`;
+
+  contenedor.innerHTML = `
+    <div class="detalle-producto-grid">
+      <div class="detalle-producto-imagen">
+        <img src="${producto.imagen}" alt="${producto.nombre}" loading="lazy" />
+      </div>
+      <div class="detalle-producto-info">
+        <h2>${producto.nombre}</h2>
+        <p>${producto.descripcion}</p>
+        <p class="detalle-producto-precio">$${producto.precio.toLocaleString('es-CL')}</p>
+
+        <div class="selector-cantidad">
+          <label for="cantidadProducto">Cantidad:</label>
+          <input type="number" id="cantidadProducto" name="cantidadProducto" min="1" value="1" />
+        </div>
+
+        <button type="button" id="botonAgregarDetalle">Añadir al carrito</button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('botonAgregarDetalle').addEventListener('click', () => {
+    const inputCantidad = document.getElementById('cantidadProducto');
+    let cantidad = parseInt(inputCantidad.value, 10);
+    if (Number.isNaN(cantidad) || cantidad < 1) {
+      cantidad = 1;
+      inputCantidad.value = 1;
+    }
+    agregarAlCarrito(producto.id, cantidad);
+    alert(`${producto.nombre} fue añadido al carrito (${cantidad}).`);
+  });
+
+  renderizarRelacionados(producto.id);
+}
+
+function renderizarRelacionados(idProductoActual) {
+  const contenedor = document.getElementById('contenedor-relacionados');
+  if (!contenedor) return;
+
+  const relacionados = productos.filter((producto) => producto.id !== idProductoActual);
+  contenedor.innerHTML = relacionados.map(crearTarjetaProducto).join('');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderizarProductos();
+  renderizarDetalleProducto();
   actualizarContadorCarrito();
 });
