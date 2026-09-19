@@ -27,7 +27,7 @@
       </button>
       <h2>Iniciar Sesión</h2>
 
-      <form id="formularioInicio">
+      <form id="formularioInicio" novalidate>
         <div class="grupo-formulario">
           <label for="correoInicio">Correo Electrónico:</label>
           <input
@@ -47,9 +47,11 @@
             name="contrasenaInicio"
             required
           />
+          <span class="mensaje-error" id="errorContrasenaInicio"></span>
         </div>
 
         <button type="submit">Iniciar Sesión</button>
+        <p id="mensajeInicioExitoso" class="mensaje-exito"></p>
       </form>
     </main>
 

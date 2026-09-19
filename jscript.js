@@ -73,22 +73,43 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const formulario = document.getElementById('formularioRegistro');
+  const formularioInicio = document.getElementById('formularioInicio');
   const nombre = document.getElementById('nombre');
   const correo = document.getElementById('correo');
+  const contrasena = document.getElementById('contrasena');
+  const contrasenaInicio = document.getElementById('contrasenaInicio');
 
   const errorNombre = document.getElementById('errorNombre');
   const errorCorreo = document.getElementById('errorCorreo');
+  const errorContrasena = document.getElementById('errorContrasena');
+  const errorContrasenaInicio = document.getElementById('errorContrasenaInicio');
+  const mensajeRegistroExitoso = document.getElementById('mensajeRegistroExitoso');
+  const mensajeInicioExitoso = document.getElementById('mensajeInicioExitoso');
 
-  if (!formulario) {
-    return;
-  }
+  const contrasenaValida = (valor) =>
+    valor.length >= 8 &&
+    /[A-Z]/.test(valor) &&
+    /[a-z]/.test(valor) &&
+    /[0-9]/.test(valor);
 
-  formulario.addEventListener('submit', (evento) => {
+  const validarContrasena = (valor, mensaje) => {
+    if (!contrasenaValida(valor)) {
+      mensaje.textContent =
+        'La contraseña debe tener 8 caracteres, una mayúscula, una minúscula y un número.';
+      return false;
+    }
+
+    mensaje.textContent = '';
+    return true;
+  };
+
+  if (formulario) {
+    formulario.addEventListener('submit', (evento) => {
     let formularioValido = true;
 
-    if (nombre.value.trim().length < 3) {
+    if (nombre.value.trim().length < 4) {
       errorNombre.textContent =
-        'El nombre debe tener al menos 3 caracteres.';
+        'El nombre debe tener al menos 4 caracteres.';
       formularioValido = false;
     } else {
       errorNombre.textContent = '';
@@ -103,10 +124,34 @@ document.addEventListener('DOMContentLoaded', () => {
       errorCorreo.textContent = '';
     }
 
+    if (!validarContrasena(contrasena.value, errorContrasena)) {
+      formularioValido = false;
+    }
+
     if (!formularioValido) {
       evento.preventDefault();
     } else {
-      alert('Formulario enviado con éxito');
+      evento.preventDefault();
+      mensajeRegistroExitoso.textContent = 'Registro realizado exitosamente.';
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 1500);
     }
-  });
+    });
+  }
+
+  if (formularioInicio) {
+    formularioInicio.addEventListener('submit', (evento) => {
+      if (!validarContrasena(contrasenaInicio.value, errorContrasenaInicio)) {
+        evento.preventDefault();
+        return;
+      }
+
+      evento.preventDefault();
+      mensajeInicioExitoso.textContent = 'Inicio de sesión exitoso.';
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 1500);
+    });
+  }
 });

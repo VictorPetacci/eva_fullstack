@@ -401,6 +401,19 @@ input:focus {
   margin-top: 4px;
 }
 
+.mensaje-exito {
+  background-color: #1d5c35;
+  border: 1px solid #35b765;
+  color: #d8ffe5;
+  margin: 18px 0 0;
+  padding: 12px;
+  text-align: center;
+}
+
+.mensaje-exito:empty {
+  display: none;
+}
+
 .pie-sitio {
   border-top: 1px solid #555555;
   color: #b5b5b5;
